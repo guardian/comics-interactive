@@ -7,6 +7,8 @@ var srcsMobile = null;
 var srcsDesktop = null;
 var ratiosMobile = null;
 var ratiosDesktop = null;
+var vPadding = null;
+var backgroundColour = null;
 
 window.init = function init(el, config) {
     iframeMessenger.enableAutoResize();
@@ -18,6 +20,8 @@ window.init = function init(el, config) {
     srcsDesktop = getParameter("srcs-desktop");
     ratiosMobile = getParameter("ratios-mobile");
     ratiosDesktop = getParameter("ratios-desktop");
+    vPadding = decodeURI(getParameter("vpadding"));
+    backgroundColour = decodeURI(getParameter("background"));
     
     buildView();
 
@@ -46,6 +50,10 @@ function buildView() {
      
     comic = document.getElementById("comic-content");
     comic.innerHTML = htmlString;
+    
+    if ( backgroundColour != null ) {
+        comic.style.backgroundColor = "#" + backgroundColour;
+    }
     
     cr = document.getElementById("comic-credit");
     cr.innerHTML = "<p>" + credit + "</p>";
