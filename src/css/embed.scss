@@ -56,11 +56,11 @@ time, mark, audio, video {
         margin-bottom: 20px;
         
         &.mobile-cell:last-of-type {
-           margin-bottom: 12px;
+           margin-bottom: 12px!important;
         }
         
         &.desktop-cell:last-of-type {
-           margin-bottom: 12px;
+           margin-bottom: 12px!important;
         }
     }
     
