@@ -51,8 +51,17 @@ function buildView() {
     comic = document.getElementById("comic-content");
     comic.innerHTML = htmlString;
     
-    if ( backgroundColour != null ) {
+    if ( backgroundColour != null && backgroundColour != "FFFFFF") {
         comic.style.backgroundColor = "#" + backgroundColour;
+    }
+    
+    if ( vPadding != null && vPadding != 20 && vPadding != "20" ) {
+        
+        var elementList = document.querySelectorAll('.comic-cell');
+        
+        for (var i = 0; i < elementList.length; i++ ) {
+        elementList[i].style.marginBottom = vPadding + "px";
+        }
     }
     
     cr = document.getElementById("comic-credit");
